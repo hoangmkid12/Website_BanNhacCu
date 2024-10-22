@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: url(../img/login.jpg)no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-login,
+        .main-register {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .main_body-login,
+        .main_body-register {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header p {
+            font-size: 2.5rem;
+            color: #3730a3;
+            text-align: center;
+            margin: 0 0 2rem 0;
+            font-weight: bold;
+            font-family: ui-serif;
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        
+        .input_text {
+            width: 100%;
+            height: 48px;
+            padding: 0 1rem;
+            font-size: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s;
+            outline: none;
+            box-sizing: border-box;
+        }
+        
+        .input_text:focus {
+            border-color: #3730a3;
+        }
+        
+        .placeholder-before {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0 0.5rem;
+            color: #6b7280;
+            transition: all 0.2s;
+            pointer-events: none;
+        }
+        
+        .input_text:focus+.placeholder-before,
+        .input_text:not(:placeholder-shown)+.placeholder-before {
+            top: 0;
+            transform: translateY(-50%) scale(0.85);
+            color: #3730a3;
+        }
+        
+        .container_input_text_sex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .container_input_text_sex p {
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        .container_input_text_sex label {
+            margin-right: 0.5rem;
+            color: #374151;
+        }
+        
+        .btn_check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn_check input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .btn_check label a {
+            color: #3730a3;
+            text-decoration: none;
+        }
+        
+        .container_login_and_register {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+        
+        .button_login,
+        .button_register,
+        .button_register2 {
+            flex: 1;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            background: #1f2937;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .button_login:hover,
+        .button_register:hover,
+        .button_register2:hover {
+            background: #374151;
+        }
+        
+        .errMSG {
+            position: absolute;
+            left: 0;
+            bottom: -1.25rem;
+            color: #dc2626;
+            font-size: 0.875rem;
+            display: none;
+        }
+        
+        .active {
+            display: none;
+        }
+        /* New styles for forgot password link */
+        
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+        
+        .forgot-password a {
+            color: #3730a3;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login form first -->
+    <div class="main-login">
+        <div class="main_body-login">
+            <div class="header">
+                <p>LOGIN</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <input class="input_text" type="text" name="login_uname" placeholder=" " required>
+                    <label class="placeholder-before">Username</label>
+                </div>
+
+                <div class="form-group">
+                    <input class="input_text" type="password" name="login_password" placeholder=" " required>
+                    <label class="placeholder-before">Password</label>
+                </div>
+
+                <div class="btn_check">
+                    <input type="checkbox" id="rememberme">
+                    <label for="rememberme">Remember me</label>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <div class="container_login_and_register">
+                    <button type="submit" class="button_login">Login</button>
+                    <button type="button" class="button_register" id="goToRegister">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register form hidden initially -->
+    <div class="main-register active">
+        <div class="main_body-register">
+            <div class="header">
+                <p>REGISTER</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <input class="input_text" type="text" name="uname" id="uname" placeholder=" " required>
+                    <label class="placeholder-before">Username</label>
+                    <span class="errMSG" id="txt_uname"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="input_text" type="email" name="email" id="email" placeholder=" " required>
+                    <label class="placeholder-before">Email</label>
+                    <span class="errMSG" id="txt_email"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="input_text" type="password" name="password" id="password" placeholder=" " required>
+                    <label class="placeholder-before">Password</label>
+                    <span class="errMSG" id="txt_password"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="input_text" type="password" name="confirm_password" id="confirm_password" placeholder=" " required>
+                    <label class="placeholder-before">Confirm password</label>
+                    <span class="errMSG" id="txt_confirm_password"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="input_text" type="date" name="birthday" id="birthday" placeholder=" " required>
+                    <label class="placeholder-before">Date of Birth</label>
+                    <span class="errMSG" id="txt_birthday"></span>
+                </div>
+
+                <div class="container_input_text_sex">
+                    <p>Sex:</p>
+                    <label>
+                        <input type="radio" name="sex" value="Male"> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value="Female"> Female
+                    </label>
+                </div>
+
+                <div class="btn_check">
+                    <input type="checkbox" id="accept_rule" required>
+                    <label for="accept_rule">I agree to the <a href="#">Terms</a></label>
+                </div>
+
+                <div class="container_login_and_register">
+                    <button type="submit" class="button_register2">Register</button>
+                    <button type="button" class="button_login" id="goToLogin">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('goToRegister').addEventListener('click', function() {
+            document.querySelector('.main-login').classList.add('active');
+            document.querySelector('.main-register').classList.remove('active');
+        });
+
+        document.getElementById('goToLogin').addEventListener('click', function() {
+            document.querySelector('.main-register').classList.add('active');
+            document.querySelector('.main-login').classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>
