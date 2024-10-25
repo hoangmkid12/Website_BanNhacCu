@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/giohang.css">
+    <!-- Đường dẫn tới file CSS của bạn -->
+    <title>Giỏ Hàng</title>
+</head>
+
+<body>
+    <header>
+        <h1>HMK - Music & Entertainment</h1>
+        <p>Nhạc Cụ Hoàng Mỹ | Chất Lượng Uy Tín | Đa Dạng Sản Phẩm</p>
+        <img src="../img/logohmk.jpg" alt="">
+    </header>
+
+    <nav>
+        <!-- Navigation Items -->
+        <div class="menu-items">
+            <a href="../html/Website_BanNhacCu.html">Trang chủ</a>
+            <a href="../html/sanpham.html">Sản phẩm</a>
+            <a href="../html/gioithieu.html">Giới thiệu</a>
+            <a href="../html/tintuc.html">Tin tức</a>
+
+        </div>
+
+        <!-- Form Tìm Kiếm trong Menu -->
+        <form class="search-form">
+            <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm..." />
+            <button type="submit" class="search-button">Tìm</button>
+        </form>
+        <div id="search-results"></div>
+
+        <div class="user-options">
+            <a href="../html/giohang.html" class="cart-button">Giỏ hàng (0)</a>
+            <!-- Cập nhật số lượng giỏ hàng -->
+            <a href="../html/login.html">Đăng nhập</a>
+        </div>
+
+    </nav>
+    <div class="container">
+
+        <!-- Phần giỏ hàng -->
+        <div class="breadcrumb">
+            Giỏ hàng > Phương thức thanh toán
+        </div>
+
+        <h1 class="cart-heading">GIỎ HÀNG</h1>
+
+        <div class="free-shipping">
+            <span>🚚</span>
+            <span>Miễn phí vận chuyển cho mọi đơn hàng</span>
+        </div>
+
+        <div style="display: flex; gap: 20px;">
+            <div style="flex: 1;">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems">
+                        <!-- Sản phẩm sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    Giỏ hàng của bạn đang trống
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <div class="total-amount">
+                    Tổng tiền <span class="total-value" id="cartTotal">0₫</span>
+                </div>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Bao gồm thuế. Miễn phí vận chuyển mọi đơn hàng!
+                </p>
+                <button class="checkout-button">Tiến Hành Đặt Hàng</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hướng dẫn chung</h3>
+                <ul>
+                    <li><a href="#">Giao hàng - Đổi trả</a></li>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Thanh toán và bảo mật</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Kích hoạt bảo hành</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul>
+                    <li><a href="#">Gọi mua hàng: 0559149520 (Miễn Phí)</a></li>
+                    <li><a href="#">Thời gian phục vụ: 8h-22h</a></li>
+                    <li><a href="#">Liên Hệ / Góp Ý</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Thông tin cửa hàng</h3>
+                <ul>
+                    <li><a href="#">Hệ thống Showroom</a></li>
+                    <li><a href="#">Chứng nhận</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Theo dõi để nhận tin tức</h3>
+                <p style="color: #999; margin-bottom: 1rem;">Cập nhật các thông tin khuyến mãi mới qua email</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 - Designed by NguyenHoangMy</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        // Khởi tạo giỏ hàng từ localStorage nếu có
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartCountElement = document.querySelector('.cart-button');
+
+        // Cập nhật số lượng sản phẩm trong giỏ hàng
+        function updateCartCount() {
+            cartCountElement.textContent = `Giỏ hàng (${cart.length})`;
+        }
+
+        // Format số tiền thành định dạng tiền tệ VND
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            }).format(amount).replace('₫', '') + '₫';
+        }
+
+        // Thêm sản phẩm vào giỏ hàng
+        function addToCart(productName, productPrice, productImage) {
+            const product = {
+                name: productName,
+                price: parseInt(productPrice),
+                image: productImage // Lưu hình ảnh
+            };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+            alert(`${productName} đã được thêm vào giỏ hàng!`);
+        }
+
+        // Cập nhật hiển thị giỏ hàng
+        function updateCartDisplay() {
+            const cartItemsElement = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const cartTotalElement = document.getElementById('cartTotal');
+
+            // Tính tổng tiền
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotalElement.textContent = formatCurrency(total);
+
+            // Cập nhật hiển thị trạng thái giỏ hàng trống
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartItemsElement.innerHTML = '';
+                return;
+            }
+
+            emptyCartMessage.style.display = 'none';
+
+            // Hiển thị các sản phẩm
+            cartItemsElement.innerHTML = cart.map((item, index) => `
+        <tr class="cart-item">
+            <td>
+                <div class="product-info">
+                    <img src="${item.image}" alt="${item.name}" class="product-image" style="width: 100px; height: auto;">
+                    <div class="product-details">
+                        <h3>${item.name}</h3>
+                        <div class="stock-status">Có hàng</div>
+                        <div class="quantity-control">Qty: 1</div>
+                    </div>
+                </div>
+            </td>
+            <td class="price">${formatCurrency(item.price)}</td>
+            <td>
+                <span class="price">${formatCurrency(item.price)}</span>
+                <span class="remove-item" onclick="removeItem(${index})">✕</span>
+            </td>
+        </tr>
+    `).join('');
+        }
+
+        // Xóa sản phẩm khỏi giỏ hàng
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Khởi tạo sự kiện cho các nút "Thêm vào giỏ hàng"
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product-name');
+                    const productPrice = this.getAttribute('data-product-price');
+                    const productImage = this.getAttribute('data-product-image'); // Lấy hình ảnh
+                    addToCart(productName, productPrice, productImage);
+                });
+            });
+
+            // Cập nhật hiển thị ban đầu
+            updateCartCount();
+            updateCartDisplay();
+        });
+    </script>
+</body>
+
+</html>

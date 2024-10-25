@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Order Information Form -->
+        <div class="bg-white p-6 rounded-lg mb-6">
+            <h2 class="text-xl text-blue-400 mb-6">Điền thông tin người mua</h2>
+            <form class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block mb-1">Họ và tên (*)</label>
+                            <input type="text" placeholder="Họ và tên(*)" class="w-full p-2 border rounded" />
+                        </div>
+                        <div>
+                            <label class="block mb-1">Số điện thoại (*)</label>
+                            <input type="tel" placeholder="Số điện thoại(*)" class="w-full p-2 border rounded" />
+                        </div>
+                        <div>
+                            <label class="block mb-1">Quốc gia (*)</label>
+                            <select class="w-full p-2 border rounded">
+                                <option>Việt Nam</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block mb-1">Tỉnh thành (*)</label>
+                            <select class="w-full p-2 border rounded">
+                                <option>Chọn tỉnh thành</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block mb-1">Quận huyện (*)</label>
+                            <select class="w-full p-2 border rounded">
+                                <option>Chọn quận huyện</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block mb-1">Phường xã (*)</label>
+                            <select class="w-full p-2 border rounded">
+                                <option>Chọn phường xã gần nhất(*)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block mb-1">Địa chỉ (*)</label>
+                            <input type="text" placeholder="Địa chỉ (ghi rõ số nhà, quận huyện)(*)" class="w-full p-2 border rounded" />
+                        </div>
+                        <div>
+                            <label class="block mb-1">Ghi chú</label>
+                            <input type="text" placeholder="Nhập ghi chú cho đơn hàng" class="w-full p-2 border rounded" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="mb-4">
+                            <label class="block mb-1">Số điện thoại</label>
+                            <input type="tel" class="w-full p-2 border rounded" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-1">Mật khẩu</label>
+                            <input type="password" class="w-full p-2 border rounded" />
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" class="mr-2" />
+                            <label>Ghi nhớ</label>
+                            <a href="#" class="text-blue-500 ml-4">Quên mật khẩu</a>
+                        </div>
+                        <div class="space-y-3">
+                            <button class="w-full bg-orange-500 text-white py-2 px-4 rounded">ĐĂNG NHẬP</button>
+                            <button class="w-full bg-blue-400 text-white py-2 px-4 rounded">ĐĂNG KÝ</button>
+                        </div>
+                        <p class="text-sm mt-4">Nếu bạn đã có tài khoản, xin mời click đăng nhập để tự động lấy thông tin đặt hàng và lưu trữ đơn hàng để tiện theo dõi trạng thái.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block mb-2">Chọn hình thức thanh toán</label>
+                    <div class="space-y-2">
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Nhân viên giao sách thu tiền trực tiếp</button>
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Chuyển khoản ngân hàng</button>
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Thanh toán qua ví điện tử Momo</button>
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Thanh toán online bằng thẻ ngân hàng nội địa</button>
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Thanh toán bằng Internet Banking</button>
+                        <button class="px-4 py-2 border rounded bg-gray-50 hover:bg-gray-100">Thanh toán bằng thẻ Visa hoặc MasterCard</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Order Details -->
+        <div class="bg-white p-6 rounded-lg mb-6">
+            <h2 class="text-blue-400 mb-4">Chi tiết đơn hàng (1 sản phẩm)</h2>
+            <div class="border-t pt-4">
+                <div class="flex items-start space-x-4 mb-4">
+                    <img src="/api/placeholder/100/140" alt="Book cover" class="w-24" />
+                    <div class="flex-1">
+                        <h3 class="font-medium">Internet, Web và Cơ sở hạ tầng thông tin - Thời hạn: Vĩnh viễn</h3>
+                        <p>Tác giả: Viện Chiến lược Thông tin và Truyền thông</p>
+                        <p>NXB: Thông tin và Truyền thông</p>
+                        <button class="text-blue-400">Xóa</button>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium">25.000 đ</p>
+                        <p class="text-gray-500 line-through">25.000 đ</p>
+                        <span class="text-red-500">- 0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-red-500 text-sm">Xin lưu ý: Tổng số lần Quý khách nhận hàng là: 1 lần. Xin Quý khách chỉ đổi trả hàng khi gian hàng không đảm bảo chất lượng sản phẩm đã giao.</p>
+
+            <!-- Order Summary -->
+            <div class="border-t mt-4 pt-4">
+                <div class="flex justify-between mb-2">
+                    <span>Tổng tiền sách</span>
+                    <div>
+                        <span class="line-through text-gray-500">25.000 đ</span>
+                        <span class="ml-2">25.000 đ</span>
+                    </div>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span>Phí vận chuyển</span>
+                    <div>
+                        <span class="line-through text-gray-500">0 đ</span>
+                        <span class="ml-2">0 đ</span>
+                    </div>
+                </div>
+                <div class="flex justify-between font-bold">
+                    <span>Tổng</span>
+                    <div>
+                        <span class="line-through text-gray-500">25.000 đ</span>
+                        <span class="ml-2">25.000 đ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-between mt-6">
+                <button class="px-6 py-2 border rounded text-blue-400">Quay lại</button>
+                <button class="px-6 py-2 bg-blue-400 text-white rounded">Đặt hàng</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

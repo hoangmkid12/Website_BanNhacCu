@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../js/script.js" defer></script>
-    <link rel="stylesheet" href="../CSS/promotion.css">
+
 </head>
 
 
@@ -16,211 +15,492 @@
     <header>
         <h1>HMK - Music & Entertainment</h1>
         <p>Nhạc Cụ Hoàng Mỹ | Chất Lượng Uy Tín | Đa Dạng Sản Phẩm</p>
-        <img src="../img/logohmk.jpg" alt="">
+        <img src="../img/logohmk.jpg" alt="Logo">
     </header>
 
-
-    <!-- Navigation Bar -->
     <nav>
         <!-- Navigation Items -->
         <div class="menu-items">
             <a href="../html/Website_BanNhacCu.html">Trang chủ</a>
-            <a href="#products">Sản phẩm</a>
-            <a href="#about">Giới thiệu</a>
-            <a href="#about">Liên hệ</a>
+            <a href="../html/sanpham.html">Sản phẩm</a>
+            <a href="../html/gioithieu.html">Giới thiệu</a>
+            <a href="../html/tintuc.html">Tin tức</a>
 
         </div>
 
         <!-- Form Tìm Kiếm trong Menu -->
-        <form class="search-form" action="#" method="get">
-            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+        <form class="search-form">
+            <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm..." />
             <button type="submit" class="search-button">Tìm</button>
         </form>
+        <div id="search-results"></div>
 
-        <a href="../html/login.html">Đăng nhập</a>
-
+        <div class="user-options">
+            <a href="../html/giohang.html" class="cart-button">Giỏ hàng (0)</a>
+            <!-- Cập nhật số lượng giỏ hàng -->
+            <a href="../html/login.html">Đăng nhập</a>
+        </div>
 
     </nav>
-    <div id="search-results" class="search-results"></div>
-    <!-- Container Home -->
-    <div class="body_banner">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- <div class="swiper-slide">
-                    <img src="../img/home-banner/1.jpg" />
-                </div> -->
-                <div class="swiper-slide">
-                    <img src="../img/banner_1.jpg" />
-                </div>
 
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="../img/banner2.jpg" alt="Banner Image 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="../img/banner4.jpg" alt="Banner Image 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="../img/banner5.jpg" alt="Banner Image 3">
+            </div>
+            <!-- Navigation Dots -->
+            <div style="text-align:center">
+
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
 
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </div>
 
-    <div id="products" class="container"></div>
-    <h2>Sản phẩm</h2>
-    <div class="product-grid">
-        <div class="product">
-            <img src="../img/dan-guitar-classic-yamaha-ntx-1-new-550x550.jpg" alt="Đàn Guitar Classic Yamaha NTX1">
-            <h2>Đàn Guitar Classic Yamaha NTX1</h2>
-            <p class="price">10.500.500 VND</p>
-            <p>Mô tả: Đàn Guitar Classic Yamaha NTX1 là một trong những mẫu guitar cổ điển chất lượng cao của Yamaha, thuộc dòng NX Series.</p>
-            <a href="../html/dan-guitar-classic.html">Xem chi tiết</a>
-        </div>
 
-        <div class="product">
-            <img src="../img/dan_violin_kapok_mv182_gia_rex500x500x4.jpg" alt="Đàn Violin Kapok MV 005">
-            <h2>Đàn Violin Kapok MV 005</h2>
-            <p class="price">6.500.000 VND</p>
-            <p>Mô tả: Đàn Violin Kapok MV 005 là một mẫu violin chất lượng dành cho người mới bắt đầu. Được làm từ gỗ tự nhiên với mặt đàn bằng gỗ vân sam, Kapok MV 005 mang lại âm thanh ấm áp và rõ ràng.</p>
-            <a href="../html/dan-violin-kapok-mv055.html">Xem chi tiết</a>
-        </div>
-        <div class="product">
-            <img src="../img/dan-piano-dien-kurtzman-p215-mai-nguyen-music.webp" alt="Đàn Piano Điện Kurtzman P215">
-            <h2>Đàn Piano Điện Kurtzman P215</h2>
-            <p class="price">7.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Điện Kurtzman P215 là một lựa chọn tuyệt vời cho những người mới học đàn và người chơi trung cấp. Đàn được trang bị âm thanh piano chân thực, tái tạo âm thanh phong phú và rõ nét.</p>
-            <a href="../html/dan-piano-dien-Kurtzman.html">Xem chi tiết</a>
-        </div>
-        <div class="product">
-            <img src="../img/Kawai-gl-20-1.jpg" alt="Đàn Piano Kawai GL-20">
-            <h2>Đàn Piano Kawai GL-20</h2>
-            <p class="price">32.200.000 VND</p>
-            <p>Mô tả: Đàn Piano Kawai GL-20 là một cây đàn grand piano cỡ nhỏ (baby grand) nổi tiếng với âm thanh tuyệt vời và độ bền cao. GL-20 thuộc dòng GL Series của Kawai.</p>
-            <a href="../html/dan-piano-kawai.html">Xem chi tiết</a>
-        </div>
+    <div class="container">
+        <h2>Sản phẩm</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-guitar-classic-yamaha-ntx-1-new-550x550.jpg" alt="Đàn Guitar Classic Yamaha NTX1">
+                    <span class="discount-badge">-5%</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Guitar Classic Yamaha NTX1</h3>
+                    <div class="product-price">
+                        10.500.500₫
+                        <span class="original-price">11.000.000₫</span>
+                    </div>
+                    <p class="product-description">Đàn Guitar Classic Yamaha NTX1 là một trong những mẫu guitar cổ điển chất lượng cao của Yamaha, thuộc dòng NX Series.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <a href="../html/dan-guitar-classic.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Guitar Classic Yamaha NTX1" data-product-price="10500500" data-product-image="../img/dan-guitar-classic-yamaha-ntx-1-new-550x550.jpg">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <!-- Violin -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan_violin_kapok_mv182_gia_rex500x500x4.jpg" alt="Đàn Violin Kapok MV 005">
+                    <span class="discount-badge">-7%</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Violin Kapok MV 005</h3>
+                    <div class="product-price">
+                        6.500.000₫
+                        <span class="original-price">7.000.000₫</span>
+                    </div>
+                    <p class="product-description">Đàn Violin Kapok MV 005 là một mẫu violin chất lượng dành cho người mới bắt đầu.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <a href="../html/dan-violin-kapok-mv055.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Violin Kapok MV 005" data-product-price="6500000" data-product-image="../img/dan_violin_kapok_mv182_gia_rex500x500x4.jpg">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/dan-piano-hybrid-digital-yamaha-n3-avantgrand-qua-su-dung-viet-music_018b7f0c-b18c-49e8-8ac2-1cd0088a6bd9.webp" alt="Đàn Piano Hybrid Digital Yamaha N3 AvantGrand">
-            <h2>Đàn Piano Hybrid Digital Yamaha N3 AvantGrand</h2>
-            <p class="price">80.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/dan-piano-hybrid.html">Xem chi tiết</a>
-        </div>
+            <!-- Digital Piano -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-piano-dien-kurtzman-p215-mai-nguyen-music.webp" alt="Đàn Piano Điện Kurtzman P215">
+                    <span class="discount-badge">-10%</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Piano Điện Kurtzman P215</h3>
+                    <div class="product-price">
+                        7.000.000₫
+                        <span class="original-price">7.500.000₫</span>
+                    </div>
+                    <p class="product-description">Đàn Piano Điện Kurtzman P215 là một lựa chọn tuyệt vời cho những người mới học đàn.</p>
+                    <span class="status-badge low-stock">Sắp hết</span>
+                    <a href="../html/dan-piano-dien-Kurtzman.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Piano Điện Kurtzman P215" data-product-price="7000000" data-product-image="../img/dan-piano-dien-kurtzman-p215-mai-nguyen-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/dan-piano-dien-bm363.jpg" alt="Đàn Piano Điện Bremen BM363">
-            <h2>Đàn Piano Điện Bremen BM363</h2>
-            <p class="price">15.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Điện Bremen BM363 là một mẫu đàn piano điện tử chất lượng, được thiết kế phù hợp cho người mới học và người chơi trung cấp.</p>
-            <a href="../html/dan-piano-dien-bremen.html">Xem chi tiết</a>
-        </div>
+            <!-- Grand Piano -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/Kawai-gl-20-1.jpg" alt="Đàn Piano Kawai GL-20">
+                    <span class="discount-badge">-8%</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Piano Kawai GL-20</h3>
+                    <div class="product-price">
+                        32.200.000₫
+                        <span class="original-price">35.000.000₫</span>
+                    </div>
+                    <p class="product-description">Đàn Piano Kawai GL-20 là một cây đàn grand piano cỡ nhỏ (baby grand) nổi tiếng.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <a href="../html/dan-piano-kawai.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Piano Kawai GL-20" data-product-price="32200000" data-product-image="../img/Kawai-gl-20-1.jpg">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/Piano-Roland-HP126.webp" alt="Đàn Piano Điện Roland HP126">
-            <h2>Đàn Piano Điện Roland HP126</h2>
-            <p class="price">20.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Điện Roland HP126 là một mẫu đàn piano điện chất lượng cao, được thiết kế đặc biệt để mang lại trải nghiệm chơi piano chuyên nghiệp và chân thực nhất cho người chơi ở mọi trình độ.</p>
-            <a href="../html/dan-piano-dien-roland-hp126.html">Xem chi tiết</a>
-        </div>
 
-        <div class="product">
-            <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Đàn Organ Yamaha PSR SX700">
-            <h2>Đàn Organ Yamaha PSR SX700</h2>
-            <p class="price">25.000.000 VND</p>
-            <p class="description">Mô tả: Đàn Organ Yamaha PSR-SX700 là một nhạc cụ điện tử chuyên nghiệp với nhiều tính năng hiện đại, phù hợp cho người chơi từ mức trung cấp đến chuyên nghiệp.</p>
-            <a href="../html/dan-organ-yamaha-psr-sx700.html">Xem chi tiết</a>
-        </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-piano-hybrid-digital-yamaha-n3-avantgrand-qua-su-dung-viet-music_018b7f0c-b18c-49e8-8ac2-1cd0088a6bd9.webp" alt="Đàn Piano Hybrid Digital Yamaha N3 AvantGrand">
+                    <span class="discount-badge">-8%</span>
+                    <!-- Giả sử có giảm giá 8% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Piano Hybrid Digital Yamaha N3 AvantGrand</h3>
+                    <div class="product-price">
+                        80.000.000₫
+                        <span class="original-price">88.000.000₫</span>
+                        <!-- Giả sử giá gốc là 88.000.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-piano-hybrid.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Piano Hybrid Digital Yamaha N3 AvantGrand" data-product-price="80000000" data-product-image="../img/dan-piano-hybrid-digital-yamaha-n3-avantgrand-qua-su-dung-viet-music_018b7f0c-b18c-49e8-8ac2-1cd0088a6bd9.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/guitar-acoustic-laveme-aircarbon.webp" alt="Đàn Guitar Acoustic Lava Me Air Carbon">
-            <h2>Đàn Guitar Acoustic Lava Me Air Carbon</h2>
-            <p class="price">12.500.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/dan-guitar-acoustic-laveme.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Piano Điện Bremen BM363 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-piano-dien-bm363.jpg" alt="Đàn Piano Điện Bremen BM363">
+                    <span class="discount-badge">-8%</span>
+                    <!-- Giả sử có giảm giá 8% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Piano Điện Bremen BM363</h3>
+                    <div class="product-price">
+                        15.000.000₫
+                        <span class="original-price">16.500.000₫</span>
+                        <!-- Giả sử giá gốc là 16.500.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Piano Điện Bremen BM363 là một mẫu đàn piano điện tử chất lượng, được thiết kế phù hợp cho người mới học và người chơi trung cấp.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-piano-dien-bremen.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Piano Điện Bremen BM363" data-product-price="15000000" data-product-image="../img/dan-piano-dien-bm363.jpg">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/dan-guitar-silent-classic-godin-acs-slim-nylon-natural-sg-viet-music.webp" alt="Đàn Guitar Silent Classic Godin ACS Slim">
-            <h2>Đàn Guitar Silent Classic Godin ACS Slim</h2>
-            <p class="price">30.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/dan-guitar-silent-classic.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Piano Điện Roland HP126 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/Piano-Roland-HP126.webp" alt="Đàn Piano Điện Roland HP126">
+                    <span class="discount-badge">-5%</span>
+                    <!-- Giả sử có giảm giá 5% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Piano Điện Roland HP126</h3>
+                    <div class="product-price">
+                        20.000.000₫
+                        <span class="original-price">21.000.000₫</span>
+                        <!-- Giả sử giá gốc là 21.000.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Piano Điện Roland HP126 là một mẫu đàn piano điện chất lượng cao, được thiết kế đặc biệt để mang lại trải nghiệm chơi piano chuyên nghiệp và chân thực nhất cho người chơi ở mọi trình độ.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-piano-dien-roland-hp126.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Piano Điện Roland HP126" data-product-price="20000000" data-product-image="../img/Piano-Roland-HP126.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/dan-guitar-dien-squier-fsr-sonic-stratocaster-hss-maple-fingerboard-viet-music.webp" alt="Đàn Guitar Điện Squier FSR Sonic Stratocaster">
-            <h2>Đàn Guitar Điện Squier FSR Sonic Stratocaster</h2>
-            <p class="price">7.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/dan-guitar-squier-sonic.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Organ Yamaha PSR SX700 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Đàn Organ Yamaha PSR SX700">
+                    <span class="discount-badge">-10%</span>
+                    <!-- Giả sử có giảm giá 10% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Organ Yamaha PSR SX700</h3>
+                    <div class="product-price">
+                        25.000.000₫
+                        <span class="original-price">27.500.000₫</span>
+                        <!-- Giả sử giá gốc là 27.500.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Organ Yamaha PSR-SX700 là một nhạc cụ điện tử chuyên nghiệp với nhiều tính năng hiện đại, phù hợp cho người chơi từ mức trung cấp đến chuyên nghiệp.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-organ-yamaha-psr-sx700.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Organ Yamaha PSR SX700" data-product-price="25000000" data-product-image="../img/Dan-organ-yamaha-psr-sx700.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/dan-guitar-acoustic-rosen-g11.webp" alt="Đàn Guitar Acoustic Rosen G11">
-            <h2>Đàn Guitar Acoustic Rosen G11</h2>
-            <p class="price">2.500.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/dan-guitar-rosen-g11.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Guitar Acoustic Lava Me Air Carbon -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/guitar-acoustic-laveme-aircarbon.webp" alt="Đàn Guitar Acoustic Lava Me Air Carbon">
+                    <span class="discount-badge">-15%</span>
+                    <!-- Giả sử có giảm giá 15% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Guitar Acoustic Lava Me Air Carbon</h3>
+                    <div class="product-price">
+                        12.500.000₫
+                        <span class="original-price">14.500.000₫</span>
+                        <!-- Giả sử giá gốc là 14.500.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Guitar Acoustic Lava Me Air Carbon là một trong những sản phẩm cao cấp, kết hợp công nghệ hiện đại với thiết kế tối ưu cho âm thanh tuyệt vời.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-guitar-acoustic-laveme.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Guitar Acoustic Lava Me Air Carbon" data-product-price="12500000" data-product-image="../img/guitar-acoustic-laveme-aircarbon.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/trong-dien-alesis-crimson-ii-mesh-special-edition-kit-viet-music.webp" alt="Trống Điện Alesis Crimson II Mesh">
-            <h2>Trống Điện Alesis Crimson II Mesh</h2>
-            <p class="price">27.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/trong-dien-alesis-crimson.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Guitar Silent Classic Godin ACS Slim -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-guitar-silent-classic-godin-acs-slim-nylon-natural-sg-viet-music.webp" alt="Đàn Guitar Silent Classic Godin ACS Slim">
+                    <span class="discount-badge">-20%</span>
+                    <!-- Giả sử có giảm giá 20% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Guitar Silent Classic Godin ACS Slim</h3>
+                    <div class="product-price">
+                        30.000.000₫
+                        <span class="original-price">37.500.000₫</span>
+                        <!-- Giả sử giá gốc là 37.500.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Guitar Silent Classic Godin ACS Slim mang lại âm thanh độc đáo và chất lượng, phù hợp cho những buổi biểu diễn âm nhạc chuyên nghiệp.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-guitar-silent-classic.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Guitar Silent Classic Godin ACS Slim" data-product-price="30000000" data-product-image="../img/dan-guitar-silent-classic-godin-acs-slim-nylon-natural-sg-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/trong-co-pearl-export-exx725sc-exx2210-121614-hwp830-viet-music-11.webp" alt="Trống Cơ Pearl Export EXX725S/C">
-            <h2>Trống Cơ Pearl Export EXX725S/C</h2>
-            <p class="price">21.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/trong-dien-alesis-crimson.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Guitar Điện Squier FSR Sonic Stratocaster -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-guitar-dien-squier-fsr-sonic-stratocaster-hss-maple-fingerboard-viet-music.webp" alt="Đàn Guitar Điện Squier FSR Sonic Stratocaster">
+                    <span class="discount-badge">-5%</span>
+                    <!-- Giả sử có giảm giá 5% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Guitar Điện Squier FSR Sonic Stratocaster</h3>
+                    <div class="product-price">
+                        7.000.000₫
+                        <span class="original-price">7.500.000₫</span>
+                        <!-- Giả sử giá gốc là 7.500.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Guitar Điện Squier FSR Sonic Stratocaster có thiết kế đẹp mắt, âm thanh sống động, thích hợp cho cả người mới bắt đầu và những nhạc sĩ chuyên nghiệp.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-guitar-squier-sonic.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Guitar Điện Squier FSR Sonic Stratocaster" data-product-price="7000000" data-product-image="../img/dan-guitar-dien-squier-fsr-sonic-stratocaster-hss-maple-fingerboard-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/trong-dien-roland-td-50kvx-viet-music.webp" alt="Trống Điện Roland TD-50KVX">
-            <h2>Trống Điện Roland TD-50KVX</h2>
-            <p class="price">50.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/trong-dien-roland.html">Xem chi tiết</a>
-        </div>
+            <!-- Đàn Guitar Acoustic Rosen G11 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/dan-guitar-acoustic-rosen-g11.webp" alt="Đàn Guitar Acoustic Rosen G11">
+                    <span class="discount-badge">-10%</span>
+                    <!-- Giả sử có giảm giá 10% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Đàn Guitar Acoustic Rosen G11</h3>
+                    <div class="product-price">
+                        2.500.000₫
+                        <span class="original-price">2.750.000₫</span>
+                        <!-- Giả sử giá gốc là 2.750.000₫ -->
+                    </div>
+                    <p class="product-description">Đàn Guitar Acoustic Rosen G11 được làm từ chất liệu tốt, mang lại âm thanh ấm áp, rất phù hợp cho việc học và biểu diễn.</p>
+                    <span class="status-badge low-stock">Sắp hết</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/dan-guitar-rosen-g11.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Đàn Guitar Acoustic Rosen G11" data-product-price="2500000" data-product-image="../img/dan-guitar-acoustic-rosen-g11.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/trong-co-tama-club-jam-ljl48h4-sbo-18101413-viet-music.webp" alt=" Trống Cơ Tama Club - JAM LJL48H4">
-            <h2>Trống Cơ Tama Club - JAM LJL48H4</h2>
-            <p class="price">35.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/trong-co-tama-club.html">Xem chi tiết</a>
-        </div>
+            <!-- Trống Điện Alesis Crimson II Mesh -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/trong-dien-alesis-crimson-ii-mesh-special-edition-kit-viet-music.webp" alt="Trống Điện Alesis Crimson II Mesh">
+                    <span class="discount-badge">-8%</span>
+                    <!-- Giả sử có giảm giá 8% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Trống Điện Alesis Crimson II Mesh</h3>
+                    <div class="product-price">
+                        27.000.000₫
+                        <span class="original-price">30.000.000₫</span>
+                        <!-- Giả sử giá gốc là 30.000.000₫ -->
+                    </div>
+                    <p class="product-description">Trống Điện Alesis Crimson II Mesh mang lại trải nghiệm chơi chân thực với bộ lưới trống, âm thanh chất lượng cao và tính năng ghi âm tiện lợi.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/trong-dien-alesis-crimson.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Trống Điện Alesis Crimson II Mesh" data-product-price="27000000" data-product-image="../img/trong-dien-alesis-crimson-ii-mesh-special-edition-kit-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/ken-cornet-yamaha-ycr-6335ii-bb-viet-music.webp" alt=" Kèn Cornet Yamaha YCR-6335II">
-            <h2>Kèn Cornet Yamaha YCR-6335II</h2>
-            <p class="price">47.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/ken-cornet-yamaha.html">Xem chi tiết</a>
-        </div>
+            <!-- Trống Cơ Pearl Export EXX725S/C -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/trong-co-pearl-export-exx725sc-exx2210-121614-hwp830-viet-music-11.webp" alt="Trống Cơ Pearl Export EXX725S/C">
+                    <span class="discount-badge">-10%</span>
+                    <!-- Giả sử có giảm giá 10% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Trống Cơ Pearl Export EXX725S/C</h3>
+                    <div class="product-price">
+                        21.000.000₫
+                        <span class="original-price">23.500.000₫</span>
+                        <!-- Giả sử giá gốc là 23.500.000₫ -->
+                    </div>
+                    <p class="product-description">Trống Cơ Pearl Export EXX725S/C có chất lượng tuyệt vời, âm thanh mạnh mẽ, phù hợp cho các buổi biểu diễn và thu âm chuyên nghiệp.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/trong-co-pearl-export.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Trống Cơ Pearl Export EXX725S/C" data-product-price="21000000" data-product-image="../img/trong-co-pearl-export-exx725sc-exx2210-121614-hwp830-viet-music-11.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/ken-clarinet-alto-yamaha-ycl-631ii-eb-professional-viet-music.webp" alt=" Kèn Clarinet Alto Yamaha YCL-631II">
-            <h2>Kèn Clarinet Alto Yamaha YCL-631II</h2>
-            <p class="price">29.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/ken-clarinet-yamaha.html">Xem chi tiết</a>
-        </div>
+            <!-- Trống Điện Roland TD-50KVX -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/trong-dien-roland-td-50kvx-viet-music.webp" alt="Trống Điện Roland TD-50KVX">
+                    <span class="discount-badge">-5%</span>
+                    <!-- Giả sử có giảm giá 5% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Trống Điện Roland TD-50KVX</h3>
+                    <div class="product-price">
+                        50.000.000₫
+                        <span class="original-price">52.500.000₫</span>
+                        <!-- Giả sử giá gốc là 52.500.000₫ -->
+                    </div>
+                    <p class="product-description">Trống Điện Roland TD-50KVX với công nghệ âm thanh tiên tiến, nhiều tính năng đa dạng, mang lại trải nghiệm âm nhạc tuyệt vời cho người chơi.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/trong-dien-roland.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Trống Điện Roland TD-50KVX" data-product-price="50000000" data-product-image="../img/trong-dien-roland-td-50kvx-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <img src="../img/ken-saxophone-alto.webp" alt=" Kèn Saxophone Alto Amati AAS-33">
-            <h2>Kèn Saxophone Alto Amati AAS-33</h2>
-            <p class="price">40.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/ken-saxophone-alto.html">Xem chi tiết</a>
-        </div>
 
-        <div class="product">
-            <img src="../img/ken-trumpet-amati.webp" alt=" Kèn Trumpet Amati ATR-313">
-            <h2>Kèn Trumpet Amati ATR-313</h2>
-            <p class="price">15.000.000 VND</p>
-            <p>Mô tả: Đàn Piano Hybrid Digital Yamaha N3 AvantGrand là một trong những sản phẩm cao cấp của Yamaha, kết hợp giữa công nghệ kỹ thuật số tiên tiến và cảm giác chơi piano cơ thực thụ.</p>
-            <a href="../html/ken-trumpet-amati.html">Xem chi tiết</a>
+            <!-- Trống Cơ Tama Club - JAM LJL48H4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/trong-co-tama-club-jam-ljl48h4-sbo-18101413-viet-music.webp" alt="Trống Cơ Tama Club - JAM LJL48H4">
+                    <span class="discount-badge">-10%</span>
+                    <!-- Giả sử có giảm giá 10% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Trống Cơ Tama Club - JAM LJL48H4</h3>
+                    <div class="product-price">
+                        35.000.000₫
+                        <span class="original-price">39.000.000₫</span>
+                        <!-- Giả sử giá gốc là 39.000.000₫ -->
+                    </div>
+                    <p class="product-description">Trống Cơ Tama Club - JAM LJL48H4 là sản phẩm lý tưởng cho những ai yêu thích âm thanh mạnh mẽ và thiết kế chắc chắn.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/trong-co-tama-club.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Trống Cơ Tama Club - JAM LJL48H4" data-product-price="35000000" data-product-image="../img/trong-co-tama-club-jam-ljl48h4-sbo-18101413-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <!-- Kèn Cornet Yamaha YCR-6335II -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/ken-cornet-yamaha-ycr-6335ii-bb-viet-music.webp" alt="Kèn Cornet Yamaha YCR-6335II">
+                    <span class="discount-badge">-5%</span>
+                    <!-- Giả sử có giảm giá 5% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kèn Cornet Yamaha YCR-6335II</h3>
+                    <div class="product-price">
+                        47.000.000₫
+                        <span class="original-price">49.500.000₫</span>
+                        <!-- Giả sử giá gốc là 49.500.000₫ -->
+                    </div>
+                    <p class="product-description">Kèn Cornet Yamaha YCR-6335II mang lại âm thanh trong trẻo và dễ chơi, rất phù hợp cho các nhạc sĩ nghiệp dư và chuyên nghiệp.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/ken-cornet-yamaha.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Kèn Cornet Yamaha YCR-6335II" data-product-price="47000000" data-product-image="../img/ken-cornet-yamaha-ycr-6335ii-bb-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <!-- Kèn Clarinet Alto Yamaha YCL-631II -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/ken-clarinet-alto-yamaha-ycl-631ii-eb-professional-viet-music.webp" alt="Kèn Clarinet Alto Yamaha YCL-631II">
+                    <span class="discount-badge">-15%</span>
+                    <!-- Giả sử có giảm giá 15% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kèn Clarinet Alto Yamaha YCL-631II</h3>
+                    <div class="product-price">
+                        29.000.000₫
+                        <span class="original-price">34.000.000₫</span>
+                        <!-- Giả sử giá gốc là 34.000.000₫ -->
+                    </div>
+                    <p class="product-description">Kèn Clarinet Alto Yamaha YCL-631II là một lựa chọn tuyệt vời cho những người yêu thích âm nhạc cổ điển và hiện đại.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/ken-clarinet-yamaha.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Kèn Clarinet Alto Yamaha YCL-631II" data-product-price="29000000" data-product-image="../img/ken-clarinet-alto-yamaha-ycl-631ii-eb-professional-viet-music.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <!-- Kèn Saxophone Alto Amati AAS-33 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/ken-saxophone-alto.webp" alt="Kèn Saxophone Alto Amati AAS-33">
+                    <span class="discount-badge">-20%</span>
+                    <!-- Giả sử có giảm giá 20% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kèn Saxophone Alto Amati AAS-33</h3>
+                    <div class="product-price">
+                        40.000.000₫
+                        <span class="original-price">50.000.000₫</span>
+                        <!-- Giả sử giá gốc là 50.000.000₫ -->
+                    </div>
+                    <p class="product-description">Kèn Saxophone Alto Amati AAS-33 với âm thanh ấm áp và thiết kế dễ dàng sử dụng, là sự lựa chọn tuyệt vời cho những ai mới bắt đầu.</p>
+                    <span class="status-badge in-stock">Còn hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/ken-saxophone-alto.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Kèn Saxophone Alto Amati AAS-33" data-product-price="40000000" data-product-image="../img/ken-saxophone-alto.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <!-- Kèn Trumpet Amati ATR-313 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/ken-trumpet-amati.webp" alt="Kèn Trumpet Amati ATR-313">
+                    <span class="discount-badge">-5%</span>
+                    <!-- Giả sử có giảm giá 5% -->
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kèn Trumpet Amati ATR-313</h3>
+                    <div class="product-price">
+                        15.000.000₫
+                        <span class="original-price">15.750.000₫</span>
+                        <!-- Giả sử giá gốc là 15.750.000₫ -->
+                    </div>
+                    <p class="product-description">Kèn Trumpet Amati ATR-313 là một lựa chọn tuyệt vời cho người mới chơi và nhạc sĩ chuyên nghiệp, với âm thanh rõ nét và dễ chơi.</p>
+                    <span class="status-badge coming-soon">Sắp có hàng</span>
+                    <!-- Trạng thái hàng hóa -->
+                    <a href="../html/ken-trumpet-amati.html" class="detail-button">Xem chi tiết</a>
+                    <button class="add-to-cart-button" data-product-name="Kèn Trumpet Amati ATR-313" data-product-price="15000000" data-product-image="../img/ken-trumpet-amati.webp">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
         </div>
-    </div>
     </div>
 
 
@@ -237,49 +517,116 @@
         </div>
     </div>
 
-    <footer>
-        <p>Email: <a href="mailto:nguyenhoangmy7720044@gmail.com">nguyenhoangmy7720044@gmail.com</a></p>
-        <p>Hotline: <a href="tel:0559149520">0559 149 520</a></p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hướng dẫn chung</h3>
+                <ul>
+                    <li><a href="#">Giao hàng - Đổi trả</a></li>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Thanh toán và bảo mật</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Kích hoạt bảo hành</a></li>
+                </ul>
+            </div>
 
-        <Address>Address: 28/177a, Phường 5, Quận Gò Vấp, TP Hồ Chí Minh</Address>
+            <div class="footer-section">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul>
+                    <li><a href="#">Gọi mua hàng: 0559149520 (Miễn Phí)</a></li>
+                    <li><a href="#">Thời gian phục vụ: 8h-22h</a></li>
+                    <li><a href="#">Liên Hệ / Góp Ý</a></li>
+                </ul>
+            </div>
 
-        <p>&copy; 2024 HMK - Music & Entertainment. Tất cả quyền được bảo lưu.</p>
+            <div class="footer-section">
+                <h3>Thông tin cửa hàng</h3>
+                <ul>
+                    <li><a href="#">Hệ thống Showroom</a></li>
+                    <li><a href="#">Chứng nhận</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Theo dõi để nhận tin tức</h3>
+                <p style="color: #999; margin-bottom: 1rem;">Cập nhật các thông tin khuyến mãi mới qua email</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 - Designed by NguyenHoangMy</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
-    <!-- JavaScript để xử lý tìm kiếm -->
+
+
     <script>
-        const products = document.querySelectorAll('.product');
-        const searchForm = document.getElementById('search-form');
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
+        let slideIndex = 0;
+        autoShowSlides();
 
-        searchForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Ngăn form tự động gửi
-
-            const query = searchInput.value.toLowerCase();
-            let results = '';
-
-            products.forEach(function(product) {
-                const productName = product.dataset.name.toLowerCase();
-                if (productName.includes(query)) {
-                    results += `
-                    <div class="product">
-                        <h2>${product.querySelector('h2').textContent}</h2>
-                        <p>${product.querySelector('.price').textContent}</p>
-                        <p>${product.querySelector('p').textContent}</p>
-                        <a href="${product.querySelector('a').href}">Xem chi tiết</a>
-                    </div>`;
-                }
-            });
-
-            if (results) {
-                searchResults.innerHTML = results;
-                searchResults.style.display = 'block';
-            } else {
-                searchResults.innerHTML = '<p>Không tìm thấy sản phẩm nào.</p>';
-                searchResults.style.display = 'block';
+        function autoShowSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-        });
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(autoShowSlides, 3000); // Chuyển slide sau 5 giây
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
     </script>
+    <script src="../js/search.js"></script>
+    <script src="../js/giohang.js"></script>
+    <script src="../js/hienthigiohang.js"></script>
+
+
 </body>
 
 </html>

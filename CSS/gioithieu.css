@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    background-image: url(../img/backgroundltop.jpg);
+    background-size: cover;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #cadb2e;
+}
+
+header p {
+    font-size: 18px;
+    margin: 10px 0 0;
+    color: aqua;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    background-color: #ffd700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+}
+
+nav .menu-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Ensures it wraps if needed */
+}
+
+nav a {
+    color: #1a1a1a;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0;
+    border-radius: 5px;
+    margin-left: 40px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+
+/* Search Form */
+
+.search-container {
+    margin: 20px 0;
+    /* Khoảng cách từ trên và dưới */
+    text-align: center;
+    /* Căn giữa nội dung tìm kiếm */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+    margin-top: 4px;
+    width: 100%;
+    max-width: 480px;
+    /* Giới hạn chiều rộng cho màn hình lớn */
+    margin: 0 auto;
+    /* Căn giữa trên màn hình */
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    padding: 11px;
+    flex: 1;
+    border-radius: 15px 0 0 15px;
+    min-width: 0;
+    /* Ngăn ngừa tràn */
+}
+
+.search-button {
+    background-color: #D1345B;
+    color: #fff;
+    border: none;
+    padding: 11px;
+    cursor: pointer;
+    border-radius: 0 15px 15px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* Ngăn ngừa chữ xuống dòng */
+}
+
+.search-button:hover {
+    background-color: #a82547;
+}
+
+.main-content {
+    padding: 2rem;
+    min-height: 60vh;
+    background-color: #fdd9d9;
+}
+
+.main-content h4 {
+    font-size: 37px;
+    font-family: initial;
+}
+
+.main-content h1 {
+    font-size: 37px;
+    font-family: initial;
+}
+
+.page-title {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.status-message {
+    color: #666;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.subscribe-form input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.subscribe-form button {
+    padding: 0.5rem 1rem;
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header img {
+    width: 75px;
+}
+
+.main-content p {
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+}

@@ -6,262 +6,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đàn Organ Yamaha PSR SX700</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f7f7f7;
+            background-color: #c4c1c1;
         }
         
         .container {
-            max-width: 1200px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             display: flex;
-            flex-wrap: wrap;
+            width: 90%;
+            margin: 20px auto;
+        }
+        /* Product image section */
+        
+        .product-images {
+            width: 40%;
+            padding: 20px;
+            background-color: #f0efef;
+            border-radius: 8px;
         }
         
-        .product-img {
-            flex: 1;
-            text-align: center;
-            padding-right: 20px;
-        }
-        
-        .product-img img {
+        .product-images img {
             width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+        }
+        
+        .thumbnail-container .thumbnail {
+            margin-right: 10px;
+        }
+        
+        .thumbnail-container .thumbnail img {
+            width: 80px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+        }
+        
+        .thumbnail-container .thumbnail img:hover {
+            border-color: #3498db;
+        }
+        /* Product info section */
+        
+        .product-info {
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            margin-left: 20px;
+            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .thumbnail {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        
-        .thumbnail img {
-            width: 60px;
-            height: 60px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .product-details {
-            flex: 2;
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-        }
-        
-        .price {
-            font-size: 1.8em;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        
-        .options {
-            margin: 20px 0;
-        }
-        
-        .options label {
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
-        
-        .colors,
-        .styles {
-            display: flex;
+        .product-info h2 {
+            font-size: 22px;
             margin-bottom: 10px;
         }
         
-        .colors div,
-        .styles div {
-            width: 30px;
-            height: 30px;
+        .rating {
+            margin-top: 5px;
+            color: #f39c12;
+        }
+        
+        .product-info p {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+        
+        .price {
+            font-size: 26px;
+            color: red;
+            font-weight: bold;
+        }
+        
+        .discount-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 20px;
             margin-right: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
         }
-        
-        .colors div {
-            background-color: black;
-        }
-        
-        .colors .white {
-            background-color: white;
-        }
-        
-        .colors .red {
-            background-color: red;
-        }
-        
-        .colors .blue {
-            background-color: blue;
-        }
-        
-        .styles div {
-            background-image: url('../img/guitar-style.jpg');
-            background-size: cover;
-        }
-        
-        .quantity {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-        
-        .quantity button {
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            background-color: #ddd;
-            border: none;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        
-        .quantity input {
-            width: 50px;
-            height: 30px;
-            text-align: center;
-            margin: 0 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+        /* Action buttons (Vertical layout) */
         
         .buttons {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
             margin-top: 20px;
+            gap: 10px;
+            /* Add space between the buttons */
         }
         
         .buttons button {
-            flex: 1;
-            padding: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
+            padding: 15px;
             border: none;
             border-radius: 5px;
-        }
-        
-        .add-to-cart {
-            background-color: #2ecc71;
-            color: white;
+            cursor: pointer;
+            font-size: 14px;
         }
         
         .buy-now {
             background-color: #e74c3c;
-            color: white;
+            color: #fff;
         }
         
-        .social-buttons {
-            margin-top: 20px;
+        .call-buy {
+            background-color: #f39c12;
+            color: #fff;
         }
         
-        .social-buttons img {
-            width: 50px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-        
-        .product-description {
-            margin-top: 40px;
-        }
-        
-        .product-description h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-        
-        .product-description ul {
-            list-style-type: none;
-            padding-left: 60px;
-            padding-top: 55px;
-        }
-        
-        .product-description li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            margin-left: -55px;
-        }
-        
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px 20px;
+        .installment {
             background-color: #3498db;
             color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
         
-        .back-link:hover {
-            background-color: #2980b9;
+        .pay-later {
+            background-color: #f1c40f;
+            color: #fff;
+        }
+        /* Support and payment section */
+        
+        .support-info {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+        .support-info p {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .banks {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .banks img {
+            width: 50px;
+            margin: 10px 10px 0 0;
+        }
+        
+        .contact {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .contact a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .contact a:first-child {
+            background-color: #0dcaf0;
+        }
+        /* Header */
+        
+        header {
+            background-image: url(../img/backgroundltop.jpg);
+            background-size: cover;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        header img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+        
+        header h1 {
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #cadb2e;
+        }
+        
+        header p {
+            font-size: 18px;
+            margin: 10px 0 0;
+            color: aqua;
+        }
+        /* Navigation Bar */
+        
+        nav {
+            background-color: #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 60px;
+            flex-wrap: wrap;
+            /* Allows wrapping on smaller screens */
+        }
+        
+        nav .menu-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* Ensures it wraps if needed */
+        }
+        
+        nav a {
+            color: #1a1a1a;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0;
+            border-radius: 5px;
+            margin-left: 40px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        /* Search Form */
+        
+        .search-form {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 15px;
+            margin-top: 4px;
+            /* Adds margin for better spacing on smaller screens */
+            width: 100%;
+            max-width: 480px;
+            /* Limits the width for larger screens */
+        }
+        
+        .search-input {
+            border: none;
+            outline: none;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            flex: 1;
+            border-radius: 15px 0 0 15px;
+            min-width: 0;
+            margin-top: -7px;
+            /* Prevents overflow */
+        }
+        
+        .search-button {
+            background-color: #D1345B;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 0 15px 15px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-top: -7px;
+            /* Prevents the text from breaking into two lines */
+        }
+        
+        .search-button:hover {
+            background-color: #a82547;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Phần hình ảnh sản phẩm -->
-        <div class="product-img">
-            <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt=" Đàn Organ Yamaha PSR SX700">
+    <!-- Header -->
+    <header>
+        <h1>HMK - Music & Entertainment</h1>
+        <p>Nhạc Cụ Hoàng Mỹ | Chất Lượng Uy Tín | Đa Dạng Sản Phẩm</p>
+        <img src="../img/logohmk.jpg" alt="">
+    </header>
+
+
+    <nav>
+        <!-- Navigation Items -->
+        <div class="menu-items">
+            <a href="../html/Website_BanNhacCu.html">Trang chủ</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="../html/gioithieu.html">Giới thiệu</a>
+            <a href="../html/tintuc.html">Tin tức</a>
+            <a href="../html/tintuc.html">Khuyến mãi</a>
         </div>
 
-        <!-- Phần thông tin sản phẩm -->
-        <div class="product-details">
-            <h1> Đàn Organ Yamaha PSR SX700</h1>
-            <p class="price">25.000.000₫</p>
+        <!-- Form Tìm Kiếm trong Menu -->
+        <form class="search-form" action="#" method="get">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button type="submit" class="search-button">Tìm</button>
+        </form>
 
-            <div class="options">
-                <label>Màu:</label>
-                <div class="colors">
-                    <div></div>
-                    <div class="white"></div>
-                    <div class="red"></div>
-                    <div class="blue"></div>
+        <div class="user-options">
+            <a href="../html/login.html">Đăng nhập</a>
+        </div>
+
+    </nav>
+    <div id="search-results" class="search-results"></div>
+    <div class="container">
+        <!-- Product Images Section -->
+        <div class="product-images">
+            <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Đàn Piano Điện Roland HP126">
+            <div class="thumbnail-container">
+                <div class="thumbnail">
+                    <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Thumbnail 1">
+                </div>
+                <div class="thumbnail">
+                    <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Thumbnail 2">
+                </div>
+                <div class="thumbnail">
+                    <img src="../img/Dan-organ-yamaha-psr-sx700.webp" alt="Thumbnail 3">
                 </div>
             </div>
+        </div>
 
-            <div class="quantity">
-                <button>-</button>
-                <input type="number" value="1">
-                <button>+</button>
+        <!-- Product Info Section -->
+        <div class="product-info">
+            <h2>Đàn Organ Yamaha PSR SX700</h2>
+            <div class="rating">★ ★ ★ ★ ★ (10 đánh giá của khách hàng)</div>
+            <p>Mã sản phẩm: <strong>GFD32TRT</strong></p>
+
+            <div class="price">
+                <span class="discount-price">27.500.000₫</span>
+                <span>25.000.000₫</span> <small>(Tiết kiệm 2.500.000₫)</small>
             </div>
 
+            <!-- Action Buttons (Vertical layout) -->
             <div class="buttons">
-                <button class="add-to-cart">Thêm vào giỏ hàng</button>
-                <button class="buy-now">Mua ngay</button>
+                <button class="buy-now" onclick="buyNow(this)">MUA NGAY</button>
+                <button class="call-buy">GỌI ĐẶT MUA</button>
+                <button class="installment">TRẢ GÓP QUA THẺ</button>
+                <button class="pay-later">MUA NGAY - TRẢ SAU</button>
             </div>
 
+            <!-- Support Info -->
+            <div class="support-info">
+                <p>✅ Trả góp 0% (áp dụng cho thẻ tín dụng)</p>
+                <p>✅ Đổi mới trong 7 ngày nếu lỗi nhà sản xuất</p>
+                <p>✅ Tư vấn hỗ trợ kĩ thuật 24/7 khi sử dụng</p>
+                <p>✅ Đầy Đủ CO, CQ nhập khẩu</p>
+            </div>
 
+            <!-- Bank Logos -->
+            <div class="banks">
+                <img src="../img/mbbank.webp" alt="Bank 1">
+                <img src="../img/vietcombank.jpg" alt="Bank 2">
+                <img src="../img/viettinbank.png" alt="Bank 3">
+                <img src="../img/agribank-logo.png" alt="Bank 4">
+                <img src="../img/bidv.jpg" alt="Bank 5">
+                <img src="../img/shinhan.png" alt="Bank 6">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact">
+                <a href="#">Chat Zalo với shop</a>
+                <a href="#">Chat Facebook với shop</a>
+            </div>
         </div>
     </div>
-
-    <div class="container product-description">
-        <h2>Chi tiết Sản phẩm</h2>
-        <ul>
-            <li>Đàn PSR-SX700 được trang bị công nghệ âm thanh AWM (Advanced Wave Memory) tiên tiến, giúp tái tạo âm thanh nhạc cụ cực kỳ chân thực và sống động.</li>
-            <li>Đàn sở hữu hơn 400 Style (điệu đệm) với nhiều thể loại âm nhạc khác nhau, cho phép người chơi dễ dàng tạo ra các bản nhạc theo sở thích cá nhân.</li>
-            <li>Đàn Yamaha PSR-SX700 có màn hình cảm ứng LCD 7 inch hiển thị màu, giúp người dùng dễ dàng điều khiển.</li>
-            <li>Đàn còn được trang bị các tính năng như ghi âm, phát lại, và chế độ DJ để sáng tạo nhạc.</li>
-        </ul>
-    </div>
-    <a href="../html/Website_BanNhacCu.html" class="back-link">Quay lại Trang chủ</a>
-    </div>
-
 </body>
+<script>
+    function buyNow() {
+        const product = {
+            id: 'GFD32TRT',
+            name: 'Đàn Organ Yamaha PSR SX700',
+            price: 25000000,
+            image: '../img/Dan-organ-yamaha-psr-sx700.webp',
+            quantity: 1
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+        const existingItemIndex = cart.findIndex(item => item.id === product.id);
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Redirect to cart page
+        window.location.href = '../html/giohang.html';
+    }
+</script>
 
 </html>
