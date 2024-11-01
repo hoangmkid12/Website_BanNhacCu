@@ -520,6 +520,10 @@ nav a:hover {
     text-decoration: none;
 }
 
+.checkout-button {
+    text-decoration: none;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;

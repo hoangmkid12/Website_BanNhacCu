@@ -499,8 +499,8 @@ input[type="button"]:focus {
     object-position: center;
     padding: 40px;
     padding-bottom: 10px;
-    border-radius: 50px;
-    margin-left: 50px;
+    border-radius: 70px;
+    margin-left: 60px;
 }
 
 .mySlides {

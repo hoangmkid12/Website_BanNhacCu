@@ -172,10 +172,97 @@
         .forgot-password a:hover {
             text-decoration: underline;
         }
+        
+        #successMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #confirmationTable {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            /* Đặt giới hạn độ rộng cho bảng xác nhận */
+            width: 100%;
+        }
+        
+        #confirmationTable h2 {
+            color: #3730a3;
+        }
+        
+        #confirmationTable table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        #confirmationTable th,
+        #confirmationTable td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            /* Tăng kích thước padding để tạo không gian hơn */
+            text-align: left;
+        }
+        
+        #confirmationTable th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .button_confirm,
+        .button_cancel {
+            padding: 10px 20px;
+            margin-top: 15px;
+            /* Tăng khoảng cách giữa các nút */
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            /* Tăng kích thước font */
+            transition: background-color 0.3s;
+            /* Thêm hiệu ứng chuyển màu */
+        }
+        
+        .button_confirm {
+            background-color: #4CAF50;
+        }
+        
+        .button_confirm:hover {
+            background-color: #45a049;
+            /* Màu nền khi hover */
+        }
+        
+        .button_cancel {
+            background-color: #dc2626;
+        }
+        
+        .button_cancel:hover {
+            background-color: #c0392b;
+            /* Màu nền khi hover */
+        }
     </style>
 </head>
 
 <body>
+    <div id="successMessage">Registration Successful!</div>
     <!-- Login form first -->
     <div class="main-login">
         <div class="main_body-login">
@@ -271,6 +358,33 @@
             </form>
         </div>
     </div>
+    <div id="confirmationTable">
+        <h2>Confirm registration information</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <td id="confirmUsername"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="confirmEmail"></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td id="confirmPassword"></td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td id="confirmBirthday"></td>
+            </tr>
+            <tr>
+                <th>Sex</th>
+                <td id="confirmSex"></td>
+            </tr>
+        </table>
+        <button class="button_confirm" onclick="finalizeRegistration()">Confirm</button>
+        <button class="button_cancel" onclick="cancelRegistration()">Cancel</button>
+    </div>
 
     <script>
         document.getElementById('goToRegister').addEventListener('click', function() {
@@ -282,6 +396,40 @@
             document.querySelector('.main-register').classList.add('active');
             document.querySelector('.main-login').classList.remove('active');
         });
+
+        function showConfirmationTable() {
+            document.getElementById("confirmUsername").innerText = document.getElementById("uname").value;
+            document.getElementById("confirmEmail").innerText = document.getElementById("email").value;
+            document.getElementById("confirmPassword").innerText = document.getElementById("password").value;
+            document.getElementById("confirmBirthday").innerText = document.getElementById("birthday").value;
+            document.getElementById("confirmSex").innerText = document.querySelector('input[name="sex"]:checked').value;
+
+            document.getElementById("confirmationTable").style.display = "block";
+        }
+
+        function finalizeRegistration() {
+            document.getElementById("confirmationTable").style.display = "none";
+            registerSuccess();
+        }
+
+        function cancelRegistration() {
+            document.getElementById("confirmationTable").style.display = "none";
+        }
+
+        function registerSuccess() {
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+                document.querySelector('.main-register').classList.add('active');
+                document.querySelector('.main-login').classList.remove('active');
+            }, 2000);
+        }
+
+        // Sử dụng onsubmit của form để hiển thị bảng xác nhận trước khi đăng ký
+        document.querySelector('.main_body-register form').onsubmit = function(event) {
+            event.preventDefault();
+            showConfirmationTable();
+        };
     </script>
 
 </body>
