@@ -358,32 +358,8 @@
             </form>
         </div>
     </div>
-    <div id="confirmationTable">
-        <h2>Confirm registration information</h2>
-        <table>
-            <tr>
-                <th>Username</th>
-                <td id="confirmUsername"></td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td id="confirmEmail"></td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td id="confirmPassword"></td>
-            </tr>
-            <tr>
-                <th>Date of Birth</th>
-                <td id="confirmBirthday"></td>
-            </tr>
-            <tr>
-                <th>Sex</th>
-                <td id="confirmSex"></td>
-            </tr>
-        </table>
-        <button class="button_confirm" onclick="finalizeRegistration()">Confirm</button>
-        <button class="button_cancel" onclick="cancelRegistration()">Cancel</button>
+    <div id="successMessage" style="display: none;">
+        <p>Đăng ký thành công!</p>
     </div>
 
     <script>
@@ -397,25 +373,6 @@
             document.querySelector('.main-login').classList.remove('active');
         });
 
-        function showConfirmationTable() {
-            document.getElementById("confirmUsername").innerText = document.getElementById("uname").value;
-            document.getElementById("confirmEmail").innerText = document.getElementById("email").value;
-            document.getElementById("confirmPassword").innerText = document.getElementById("password").value;
-            document.getElementById("confirmBirthday").innerText = document.getElementById("birthday").value;
-            document.getElementById("confirmSex").innerText = document.querySelector('input[name="sex"]:checked').value;
-
-            document.getElementById("confirmationTable").style.display = "block";
-        }
-
-        function finalizeRegistration() {
-            document.getElementById("confirmationTable").style.display = "none";
-            registerSuccess();
-        }
-
-        function cancelRegistration() {
-            document.getElementById("confirmationTable").style.display = "none";
-        }
-
         function registerSuccess() {
             document.getElementById('successMessage').style.display = 'block';
             setTimeout(function() {
@@ -425,12 +382,13 @@
             }, 2000);
         }
 
-        // Sử dụng onsubmit của form để hiển thị bảng xác nhận trước khi đăng ký
+        // Sử dụng onsubmit của form để hiển thị thông báo đăng ký thành công
         document.querySelector('.main_body-register form').onsubmit = function(event) {
             event.preventDefault();
-            showConfirmationTable();
+            registerSuccess();
         };
     </script>
+
 
 </body>
 
